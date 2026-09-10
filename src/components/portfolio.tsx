@@ -127,7 +127,7 @@ function ResumeDialog({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Header({ dark, toggleTheme }: { dark: boolean; toggleTheme: () => void }) {
+function Header({ dark, toggleTheme, activeSection }: { dark: boolean; toggleTheme: () => void; activeSection: string }) {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur-md">
       <div className="mx-auto grid h-16 max-w-[1440px] grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 lg:h-20 lg:px-10">
@@ -135,7 +135,7 @@ function Header({ dark, toggleTheme }: { dark: boolean; toggleTheme: () => void 
         <div className="flex shrink-0 items-center gap-1.5">
           <nav aria-label="Primary navigation" className="mr-3 hidden items-center gap-4 xl:flex">
             {d.navigation.map(([label, id]) => (
-              <a className="nav-link" href={`#${id}`} key={id}>{label}</a>
+              <a className="nav-link" data-active={activeSection === id} href={`#${id}`} key={id}>{label}</a>
             ))}
           </nav>
           <ResumeDialog>
@@ -174,12 +174,28 @@ function Header({ dark, toggleTheme }: { dark: boolean; toggleTheme: () => void 
 
 export function Portfolio() {
   const [dark, setDark] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const saved = window.localStorage.getItem("sahala-theme");
     const nextDark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
     setDark(nextDark);
     document.documentElement.classList.toggle("dark", nextDark);
+  }, []);
+
+  useEffect(() => {
+    const sections = d.navigation
+      .map(([, id]) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) setActiveSection(visible.target.id);
+      },
+      { rootMargin: "-15% 0px -70% 0px", threshold: [0, 0.2, 0.5] },
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   const toggleTheme = () => {
@@ -204,7 +220,7 @@ export function Portfolio() {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
-      <Header dark={dark} toggleTheme={toggleTheme} />
+      <Header dark={dark} toggleTheme={toggleTheme} activeSection={activeSection} />
       <main>
         <section id="home" className="section-shell scroll-mt-24 border-b border-border pb-16 pt-10 lg:pb-20 lg:pt-16">
           <SectionLabel number="01">Software / Technology</SectionLabel>

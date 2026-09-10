@@ -1,6 +1,6 @@
 # Portfolio build
 
 - [x] Define centralized portfolio content and placeholders
-- [ ] Build responsive portfolio and interactions
-- [ ] Apply light/dark editorial design system
-- [ ] Validate desktop, tablet, and mobile experiences
+- [x] Build responsive portfolio and interactions
+- [x] Apply light/dark editorial design system
+- [x] Validate desktop, tablet, and mobile experiences
