@@ -101,7 +101,12 @@
   --projects-foreground: oklch(0.965 0.009 88);
   --projects-muted: oklch(0.72 0.012 85);
   --projects-rule: oklch(0.36 0.012 85);
+  --hero: oklch(0.615 0.185 41);
+  --hero-foreground: oklch(0.99 0.005 88);
+  --hero-muted: oklch(0.92 0.04 55);
+  --hero-rule: oklch(0.99 0.005 88 / 26%);
   --chart-1: oklch(0.646 0.222 41.116);
+
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
