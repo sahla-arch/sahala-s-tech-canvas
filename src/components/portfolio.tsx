@@ -41,7 +41,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Textarea } from "@/components/ui/textarea";
-import { portfolioData, type FeaturedProject } from "@/data/portfolioData";
+import { portfolioData, type FeaturedProject } from "@/data/portfolio-data";
 
 const d = portfolioData;
 
