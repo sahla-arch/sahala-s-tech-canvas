@@ -456,7 +456,27 @@ export function Portfolio() {
         <section id="certifications" className="section-shell scroll-mt-24 border-b border-border py-16 lg:py-20">
           <div className="editorial-grid">
             <SectionLabel number="10">Certifications</SectionLabel>
-            <div className="col-span-12 md:col-span-9"><div className="border border-dashed border-border p-6 md:p-8"><Award className="size-6 text-signal" /><h2 className="mt-8 font-display text-2xl font-semibold">{d.certifications[0].name}</h2><p className="mt-2 text-sm text-muted-foreground">{d.certifications[0].status}. This section is ready for future certificates.</p></div></div>
+            <div className="col-span-12 md:col-span-9">
+              <div className="grid gap-px bg-border sm:grid-cols-2">
+                {d.certifications.map((cert) => (
+                  <article className="bg-background p-6 md:p-8" key={cert.name}>
+                    <div className="grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4">
+                      <Award aria-hidden="true" className="size-6 shrink-0 text-signal" />
+                      <span className="tag tag-outline shrink-0">{cert.category}</span>
+                    </div>
+                    <h3 className="mt-8 font-display text-2xl font-semibold">{cert.name}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{cert.issuer} · {cert.date}</p>
+                    <p className="mt-6 inline-flex items-center gap-2 border border-dashed border-border px-3 py-2 font-mono text-[10px] uppercase text-muted-foreground">
+                      <FileText aria-hidden="true" className="size-4 text-signal" />{cert.status}
+                    </p>
+                  </article>
+                ))}
+                <article className="flex min-h-48 items-center bg-background p-6 md:p-8">
+                  <p className="text-sm leading-6 text-muted-foreground">More certificates can be added here as they are earned — each card carries issuer, date, category and a preview placeholder.</p>
+                </article>
+              </div>
+            </div>
+
           </div>
         </section>
 
