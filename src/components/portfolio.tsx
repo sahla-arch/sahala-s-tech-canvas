@@ -178,6 +178,15 @@ function Header({ dark, toggleTheme, activeSection }: { dark: boolean; toggleThe
 export function Portfolio() {
   const [dark, setDark] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    void navigator.clipboard?.writeText(d.identity.email).then(() => {
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    });
+  };
+
 
   useEffect(() => {
     const saved = window.localStorage.getItem("sahala-theme");
