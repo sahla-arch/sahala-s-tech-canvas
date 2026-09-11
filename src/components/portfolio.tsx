@@ -6,7 +6,10 @@ import {
   Award,
   BriefcaseBusiness,
   Camera,
+  Check,
   ChevronRight,
+  Copy,
+
   Code2,
   ExternalLink,
   FileText,
