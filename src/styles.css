@@ -67,7 +67,12 @@
   --color-projects-foreground: var(--projects-foreground);
   --color-projects-muted: var(--projects-muted);
   --color-projects-rule: var(--projects-rule);
+  --color-hero: var(--hero);
+  --color-hero-foreground: var(--hero-foreground);
+  --color-hero-muted: var(--hero-muted);
+  --color-hero-rule: var(--hero-rule);
 }
+
 
 :root {
   --radius: 0.125rem;
