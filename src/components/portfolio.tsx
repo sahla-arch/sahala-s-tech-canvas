@@ -509,6 +509,13 @@ export function Portfolio() {
                     <a className="contact-row" href={`tel:+91${d.identity.phone}`}><Phone /> <span>+91 {d.identity.phone}</span></a>
                     <p className="text-sm leading-6 text-muted-foreground">{d.identity.location}</p>
                   </div>
+                  <div className="mt-6 flex flex-wrap gap-3">
+                    <Button asChild className="rounded-none px-5"><a href={`mailto:${d.identity.email}`}>Email me <Mail /></a></Button>
+                    <Button variant="outline" className="rounded-none px-5" onClick={copyEmail}>
+                      {copied ? "Email copied" : "Copy email"} {copied ? <Check /> : <Copy />}
+                    </Button>
+                  </div>
+
                   <div className="mt-8 flex flex-wrap gap-4">
                     <a aria-label="GitHub" className="icon-link" href={d.links.github} target="_blank" rel="noreferrer"><Github /></a>
                     <a aria-label="LinkedIn" className="icon-link" href={d.links.linkedin} target="_blank" rel="noreferrer"><Linkedin /></a>
