@@ -245,6 +245,58 @@
   background-size: 32px 32px;
 }
 
+@utility hero-canvas {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-hero);
+  color: var(--color-hero-foreground);
+  background-image:
+    linear-gradient(var(--color-hero-rule) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-hero-rule) 1px, transparent 1px);
+  background-size: 25% 220px;
+  background-position: -1px -1px;
+}
+
+@utility hero-cross {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  color: var(--color-hero-foreground);
+  opacity: 0.55;
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    background: currentColor;
+  }
+  &::before { inset-inline: 0; top: 50%; height: 1px; }
+  &::after { inset-block: 0; left: 50%; width: 1px; }
+}
+
+@utility hero-watermark {
+  position: absolute;
+  inset-inline: 0;
+  top: 4%;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(4rem, 19vw, 16rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: var(--color-hero-foreground);
+  opacity: 0.11;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+@utility hero-card {
+  border: 1px solid var(--color-hero-rule);
+  background: color-mix(in oklab, var(--color-hero-foreground) 12%, transparent);
+  backdrop-filter: blur(6px);
+}
+
+
+
 @utility profile-frame {
   border: 1px solid var(--color-border);
   padding: 0.5rem;
