@@ -222,36 +222,84 @@ export function Portfolio() {
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <Header dark={dark} toggleTheme={toggleTheme} activeSection={activeSection} />
       <main>
-        <section id="home" className="section-shell scroll-mt-24 border-b border-border pb-16 pt-10 lg:pb-20 lg:pt-16">
-          <SectionLabel number="01">Software / Technology</SectionLabel>
-          <div className="mt-8 grid grid-cols-12 items-end gap-x-6 gap-y-10">
-            <div className="col-span-12 lg:col-span-8">
-              <p className="font-mono text-xs font-semibold uppercase text-signal">{d.identity.role} · {d.identity.graduation}</p>
-              <h1 className="mt-5 max-w-[12ch] font-display text-5xl font-bold leading-[0.94] sm:text-7xl lg:text-[6.2rem]">
-                Sahala Shana <span className="text-signal">VK</span>
-              </h1>
-              <p className="mt-7 max-w-3xl font-display text-2xl font-semibold leading-tight sm:text-4xl">{d.identity.statement}</p>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-muted-foreground">{d.identity.positioning}</p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button asChild className="rounded-none px-5"><a href="#projects">View My Projects <ArrowRight /></a></Button>
-                <ResumeDialog><Button variant="outline" className="rounded-none px-5">Download Resume <ArrowDownToLine /></Button></ResumeDialog>
-                <Button asChild variant="ghost" className="rounded-none px-5"><a href="#contact">Contact Me</a></Button>
-              </div>
-              <div className="mt-7 flex items-center gap-5">
-                <a className="social-link" href={d.links.github} target="_blank" rel="noreferrer"><Github /> GitHub</a>
-                <a className="social-link" href={d.links.linkedin} target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a>
-              </div>
-            </div>
-            <div className="col-span-12 lg:col-span-4 lg:border-l lg:border-border lg:pl-6">
-              <div className="profile-frame">
-                <AssetPlaceholder label="Professional profile photo" />
-                <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-3 border-t border-border px-4 py-3 font-mono text-[10px] uppercase text-muted-foreground">
-                  <span className="truncate">Photo placeholder</span><span className="shrink-0 text-signal">Available to replace</span>
+        <section id="home" className="scroll-mt-20 border-b border-border">
+          <div className="hero-canvas">
+            <span aria-hidden="true" className="hero-watermark">SAHALA</span>
+            {[25, 50, 75].map((x) =>
+              [220, 440].map((y) => (
+                <span aria-hidden="true" key={`${x}-${y}`} className="hero-cross" style={{ left: `calc(${x}% - 7px)`, top: `${y - 7}px` }} />
+              )),
+            )}
+            <div className="section-shell relative z-10 py-14 lg:py-20">
+              <div className="grid grid-cols-12 gap-x-6 gap-y-10">
+                <div className="col-span-12 lg:col-span-7">
+                  <p className="font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-hero-muted">
+                    {d.identity.role} · {d.identity.graduation}
+                  </p>
+                  <h1 className="mt-6 font-display text-5xl font-bold uppercase leading-[0.88] tracking-tight sm:text-7xl lg:text-[6.4rem]">
+                    Sahala<br />Shana VK
+                  </h1>
+                  <p className="mt-8 max-w-xl font-display text-xl font-semibold leading-snug sm:text-2xl">
+                    {d.identity.statement}
+                  </p>
+                  <p className="mt-4 max-w-xl text-sm leading-6 text-hero-muted">{d.identity.positioning}</p>
+                  <div className="mt-9 flex flex-wrap gap-3">
+                    <Button asChild className="rounded-none bg-hero-foreground px-5 text-hero hover:bg-foreground hover:text-background">
+                      <a href="#projects">View Projects <ArrowRight /></a>
+                    </Button>
+                    <ResumeDialog>
+                      <Button variant="outline" className="rounded-none border-hero-foreground/50 bg-transparent px-5 text-hero-foreground hover:bg-hero-foreground hover:text-hero">
+                        Download Resume <ArrowDownToLine />
+                      </Button>
+                    </ResumeDialog>
+                    <Button asChild variant="ghost" className="rounded-none px-5 text-hero-foreground hover:bg-hero-foreground/15 hover:text-hero-foreground">
+                      <a href="#contact">Contact Me</a>
+                    </Button>
+                  </div>
+                  <div className="mt-8 flex flex-wrap items-center gap-5 text-hero-foreground">
+                    <a className="social-link [&_svg]:text-hero-foreground hover:!text-hero-muted" href={d.links.github} target="_blank" rel="noreferrer"><Github /> GitHub</a>
+                    <a className="social-link [&_svg]:text-hero-foreground hover:!text-hero-muted" href={d.links.linkedin} target="_blank" rel="noreferrer"><Linkedin /> LinkedIn</a>
+                  </div>
+                </div>
+
+                <div className="col-span-12 lg:col-span-5">
+                  <div className="hero-card p-2">
+                    <div className="grid min-h-72 place-items-center border border-dashed border-hero-rule md:min-h-96">
+                      <div className="flex flex-col items-center gap-3 text-center">
+                        <Camera aria-hidden="true" className="size-5" />
+                        <span className="font-mono text-[11px] font-semibold uppercase text-hero-muted">Professional portrait placeholder</span>
+                      </div>
+                    </div>
+                    <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-3 px-3 py-3 font-mono text-[10px] uppercase text-hero-muted">
+                      <span className="truncate">Photo badge · Sahala Shana VK</span>
+                      <span className="shrink-0">Ready to replace</span>
+                    </div>
+                  </div>
+                  <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                    <a href="#projects" className="hero-card grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 p-4 transition-colors hover:bg-hero-foreground hover:text-hero">
+                      <span className="min-w-0">
+                        <span className="block font-mono text-[10px] uppercase">Featured work</span>
+                        <span className="block truncate font-display text-lg font-semibold">HostelHub</span>
+                      </span>
+                      <ArrowUpRight aria-hidden="true" className="size-5 shrink-0" />
+                    </a>
+                    <a href="#contact" className="hero-card grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 p-4 transition-colors hover:bg-hero-foreground hover:text-hero">
+                      <span className="min-w-0">
+                        <span className="flex items-center gap-2 font-mono text-[10px] uppercase">
+                          <span className="size-1.5 shrink-0 rounded-full bg-hero-foreground" />
+                          {d.identity.availability}
+                        </span>
+                        <span className="block truncate font-display text-lg font-semibold">Let’s connect</span>
+                      </span>
+                      <ArrowUpRight aria-hidden="true" className="size-5 shrink-0" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
+
 
         <section id="about" className="section-shell scroll-mt-24 border-b border-border py-16 lg:py-20">
           <div className="editorial-grid">
