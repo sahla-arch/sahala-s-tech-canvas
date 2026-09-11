@@ -4,7 +4,8 @@ export const portfolioData = {
     shortName: "SS/VK",
     role: "B.Tech Information Technology Student",
     graduation: "Graduating 2027",
-    positioning: "Software Developer focused on building attractive and user-friendly digital experiences.",
+    positioning:
+      "Software Developer focused on building attractive and user-friendly digital experiences.",
     statement: "Building practical technology with a creative eye.",
     location: "Parappanangdi, Malappuram, Kerala, India",
     email: "sahlashana.it@gmail.com",
@@ -30,7 +31,7 @@ export const portfolioData = {
     { title: "Mobile App Development", text: "Developing mobile applications with Flutter and Firebase." },
     { title: "UI/UX & Product Design", text: "Using interface design to make technology clearer and easier to use." },
   ],
-  exploring: ["AI/ML", "Cloud", "Cybersecurity", "React", ".NET"],
+  exploring: ["AI/ML", "Cloud Technologies", "Cybersecurity", "React", ".NET"],
   skills: [
     { level: "Current / Hands-on", groups: ["Web — HTML, CSS, JavaScript", "Mobile — Flutter, Firebase", "Design — Figma, Canva", "Tools — GitHub, VS Code, Android Studio", "Database — Firebase, MySQL"] },
     { level: "Developing", groups: ["Python", "Java", "C", "Data Structures", "Computer Networks", "Operating Systems", "MySQL"] },
@@ -43,18 +44,39 @@ export const portfolioData = {
       subtitle: "Smart Digital Hostel Management System",
       status: "Featured mobile app",
       tech: ["Flutter", "Firebase"],
-      problem: "Detailed problem statement to be added.",
-      solution: "A Flutter and Firebase mobile application for digital hostel management.",
-      features: ["Detailed feature list to be added", "Project screenshots to be added", "Repository link to be added"],
+      problem:
+        "Hostel routines — attendance, movement records, mess accounts and complaints — are handled on paper across students, wardens, matron and mess secretary.",
+      solution:
+        "A Flutter and Firebase mobile application that brings those hostel workflows into one role-aware digital system.",
+      features: [
+        "Attendance tracking",
+        "Outgoing and homegoing records",
+        "Hospital slips",
+        "Mess cuts and mess billing",
+        "Complaint handling",
+        "Notifications",
+        "Parent access",
+        "Roles: students, wardens, matron, mess secretary",
+        "Project screenshots to be added",
+      ],
     },
     {
       name: "Gramika",
       subtitle: "Digital Panchayat Management System",
       status: "Featured mobile app",
       tech: ["Flutter", "Firebase"],
-      problem: "Detailed problem statement to be added.",
-      solution: "A multi-role Flutter and Firebase mobile application for Panchayat management.",
-      features: ["Detailed role list to be added", "Project screenshots to be added", "Repository link to be added"],
+      problem:
+        "Panchayat notices, services and local information reach citizens through scattered, offline channels.",
+      solution:
+        "A Flutter and Firebase mobile application connecting citizens with their local Panchayat through a multi-tier admin structure.",
+      features: [
+        "Panchayat notices and news",
+        "Job vacancies",
+        "Local services",
+        "Emergency contacts",
+        "Multi-tier admin roles",
+        "Project screenshots to be added",
+      ],
     },
     {
       name: "Major Project — Coming Soon",
@@ -67,13 +89,13 @@ export const portfolioData = {
     },
   ],
   webExperiments: [
-    { name: "IT Department Website", type: "College assignment", tech: "HTML / CSS / JavaScript" },
-    { name: "Valentine Interactive Website", type: "Personal experiment", tech: "HTML / CSS / JavaScript" },
-    { name: "5th Anniversary Website", type: "Personal project", tech: "HTML / CSS / JavaScript" },
+    { name: "IT Department Website", type: "College portal assignment", tech: "HTML / CSS / JavaScript" },
+    { name: "Valentine Interactive Website", type: "Creative animated web gift", tech: "HTML / CSS / JavaScript" },
+    { name: "5th Anniversary Website", type: "Personalized interactive gift", tech: "HTML / CSS / JavaScript" },
   ],
   experience: [
-    { organization: "Madcodres Technologies", location: "Kinfra Kakanchery", role: "Flutter Mobile App Development Intern", period: "June 1 – July 1, 2026", detail: "Built an official Panchayat mobile app.", certificate: "Certificate to be added" },
-    { organization: "Corizo", location: "", role: "Cybersecurity Intern", period: "August 2025 – October 2025", detail: "Cybersecurity fundamentals training.", certificate: "Certificate details to be added" },
+    { organization: "Madcodres Technologies", location: "Kinfra Kakanchery", role: "Flutter Mobile App Development Intern", period: "June 1 – July 1, 2026", detail: "Built an official Panchayat mobile app.", certificate: "Certificate available — file to be added" },
+    { organization: "Corizo", location: "Remote", role: "Cybersecurity Intern", period: "August 2025 – October 2025", detail: "Cybersecurity fundamentals training.", certificate: "Certificate details to be added" },
   ],
   education: [
     { institution: "Government Engineering College Idukki", qualification: "B.Tech Information Technology", board: "APJ Abdul Kalam Technological University", period: "2023–2027", result: "CGPA 7.00" },
@@ -85,13 +107,19 @@ export const portfolioData = {
     "Drishti Tech Fest — CET · Upcoming / attending", "Preparing for GATE 2027",
   ],
   design: {
-    summary: "A supporting perspective that helps me think through interfaces, structure and visual communication.",
-    categories: ["Figma frameworks", "UI/UX wireframes", "Digital invitations", "Posters", "Save-the-dates"],
+    summary: "A supporting perspective that helps me think through interfaces, structure and visual communication: wireframing, Figma flows and visual composition.",
+    categories: ["Wireframing", "Figma flows", "Visual composition", "Digital invitations", "Event posters", "Design experiments"],
   },
   certifications: [
-    { name: "Madcodres Technologies Internship Certificate", status: "Certificate to be added" },
+    {
+      name: "Flutter Mobile App Development Internship",
+      issuer: "Madcodres Technologies",
+      date: "July 2026",
+      category: "Internship",
+      status: "Certificate file to be added",
+    },
   ],
-  volunteering: ["Alumni Connect Volunteer", "Oasis Volunteer", "Sterelerio Astronomy Club Volunteer"],
+  volunteering: ["Alumni Connect Volunteer", "Oasis Social Service Volunteer", "Sterelerio Astronomy Club Volunteer"],
   interests: ["Digital Design", "Cooking", "Journaling", "Driving"],
 } as const;
 
