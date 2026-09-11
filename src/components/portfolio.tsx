@@ -276,15 +276,18 @@ export function Portfolio() {
 
                 <div className="col-span-12 lg:col-span-5">
                   <div className="hero-card p-2">
-                    <div className="grid min-h-72 place-items-center border border-dashed border-hero-rule md:min-h-96">
-                      <div className="flex flex-col items-center gap-3 text-center">
-                        <Camera aria-hidden="true" className="size-5" />
-                        <span className="font-mono text-[11px] font-semibold uppercase text-hero-muted">Professional portrait placeholder</span>
-                      </div>
+                    <div className="aspect-square overflow-hidden border border-hero-rule bg-hero-foreground/10">
+                      <img
+                        src={d.identity.profilePhoto}
+                        alt="Sahala Shana VK — professional portrait"
+                        className="h-full w-full object-cover"
+                        loading="eager"
+                        decoding="async"
+                      />
                     </div>
                     <div className="grid grid-cols-[minmax(0,1fr)_auto] gap-3 px-3 py-3 font-mono text-[10px] uppercase text-hero-muted">
                       <span className="truncate">Photo badge · Sahala Shana VK</span>
-                      <span className="shrink-0">Ready to replace</span>
+                      <span className="shrink-0">B.Tech IT · 2027</span>
                     </div>
                   </div>
                   <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
