@@ -412,9 +412,43 @@ export function Portfolio() {
             <div className="mt-16 border-t border-projects-rule pt-8">
               <p className="detail-label text-projects-muted">Web experiments & personal projects</p>
               <div className="mt-5 grid gap-px bg-projects-rule md:grid-cols-3">
-                {d.webExperiments.map((item) => (
-                  <article className="bg-projects p-5" key={item.name}><Code2 className="size-5 text-signal" /><h3 className="mt-8 font-display text-lg font-semibold">{item.name}</h3><p className="mt-2 text-xs text-projects-muted">{item.type} · {item.tech}</p></article>
-                ))}
+               {d.webExperiments.map((item) => (
+  <article className="bg-projects p-5" key={item.name}>
+    {item.images?.[0] && (
+      <div className="mb-5 flex h-64 items-center justify-center overflow-hidden border border-border bg-background">
+        <img
+          src={item.images[0]}
+          alt={`${item.name} screenshot`}
+          className="max-h-full max-w-full object-contain"
+        />
+      </div>
+    )}
+
+    <div className="flex items-center gap-2">
+      <Code2 className="size-5 text-signal" />
+      <h3 className="font-display text-xl font-bold">
+        {item.name}
+      </h3>
+    </div>
+
+    <p className="mt-2 text-sm text-projects-muted">
+      {item.type} · {item.tech}
+    </p>
+
+    {item.images?.length > 1 && (
+      <div className="mt-4 grid grid-cols-2 gap-2">
+        {item.images.slice(1).map((image, index) => (
+          <img
+            key={image}
+            src={image}
+            alt={`${item.name} screenshot ${index + 2}`}
+            className="h-32 w-full object-contain border border-border bg-background"
+          />
+        ))}
+      </div>
+    )}
+  </article>
+))})}
               </div>
             </div>
           </div>
