@@ -58,8 +58,11 @@ export const portfolioData = {
         "Notifications",
         "Parent access",
         "Roles: students, wardens, matron, mess secretary",
-        "Project screenshots to be added",
       ],
+      images: [
+  "/projects/hostelHub.jpeg",
+  "/projects/hostel-dashboard.jpeg",
+],
     },
     {
       name: "Gramika",
@@ -76,8 +79,12 @@ export const portfolioData = {
         "Local services",
         "Emergency contacts",
         "Multi-tier admin roles",
-        "Project screenshots to be added",
       ],
+      images: [
+  "/projects/gramika.jpeg",
+  "/projects/gramika-dash1.jpeg",
+  "/projects/gramika-dash2.jpeg",
+],
     },
     {
       name: "Major Project — Coming Soon",
