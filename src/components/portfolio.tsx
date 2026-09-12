@@ -380,12 +380,12 @@ export function Portfolio() {
             <div className="mt-12 grid grid-cols-12 gap-x-6 gap-y-12">
               {d.featuredProjects.slice(0, 2).map((project, index) => (
                 <article className={index === 0 ? "col-span-12 lg:col-span-7" : "col-span-12 lg:col-span-5"} key={project.name}>
-                 <div className="project-media">
+                 <div className="project-media h-[420px] flex items-center justify-center overflow-hidden">
   {project.images?.[0] ? (
     <img
       src={project.images[0]}
       alt={`${project.name} screenshot`}
-      className="h-full w-full object-cover"
+      className="max-h-full max-w-full object-contain"
     />
   ) : (
     <AssetPlaceholder label={`${project.name} screenshot`} />
