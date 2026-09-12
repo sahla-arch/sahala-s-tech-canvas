@@ -140,6 +140,15 @@ export const portfolioData = {
   design: {
     summary: "A supporting perspective that helps me think through interfaces, structure and visual communication: wireframing, Figma flows and visual composition.",
     categories: ["Wireframing", "Figma flows", "Visual composition", "Digital invitations", "Event posters", "Design experiments"],
+  images: [
+    "./designs/wedding-invitation.png",
+    "./designs/save-the-date.png",
+    "./designs/nikkah-nama.png",
+    "./designs/newspaper-printed.jpeg",
+    "./designs/nameslips-printed.jpeg",
+    "./designs/she-geci.png",
+  ],
+  
   },
   certifications: [
     {
