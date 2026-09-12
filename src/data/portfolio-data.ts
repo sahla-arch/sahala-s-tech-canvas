@@ -142,6 +142,7 @@ export const portfolioData = {
     categories: ["Wireframing", "Figma flows", "Visual composition", "Digital invitations", "Event posters", "Design experiments"],
   images: [
      "./designs/it-department-prototype.png",
+     "./designs/it-dep-wireframe.png",
     "./designs/wedding-invitation.png",
     "./designs/save-the-date.png",
     "./designs/nikkah-nama.png",
