@@ -77,9 +77,27 @@ function ProjectDialog({ project, children }: { project: FeaturedProject; childr
           <DialogHeader className="mt-3">
             <DialogTitle className="font-display text-3xl font-bold md:text-4xl">{project.name}</DialogTitle>
             <DialogDescription className="text-base text-muted-foreground">{project.subtitle}</DialogDescription>
-          </DialogHeader>
-        </div>
-        <div className="grid gap-px bg-border md:grid-cols-2">
+         </DialogHeader>
+</div>
+
+{project.images?.length ? (
+  <div className="grid gap-4 p-6 md:grid-cols-2">
+    {project.images.map((image, index) => (
+      <div
+        key={image}
+        className="overflow-hidden border border-border bg-background"
+      >
+        <img
+          src={image}
+          alt={`${project.name} screenshot ${index + 1}`}
+          className="h-auto w-full object-cover"
+        />
+      </div>
+    ))}
+  </div>
+) : null}
+
+<div className="grid gap-px bg-border md:grid-cols-2">
           <div className="bg-background p-6 md:p-8">
             <p className="detail-label">Problem</p>
             <p className="mt-3 text-sm leading-6 text-muted-foreground">{project.problem}</p>
