@@ -96,11 +96,34 @@ export const portfolioData = {
       features: ["Topic to be added", "Technology stack to be added", "Project media to be added"],
     },
   ],
-  webExperiments: [
-    { name: "IT Department Website", type: "College portal assignment", tech: "HTML / CSS / JavaScript" },
-    { name: "Valentine Interactive Website", type: "Creative animated web gift", tech: "HTML / CSS / JavaScript" },
-    { name: "5th Anniversary Website", type: "Personalized interactive gift", tech: "HTML / CSS / JavaScript" },
-  ],
+ webExperiments: [
+  {
+    name: "IT Department Website",
+    type: "College portal assignment",
+    tech: "HTML / CSS / JavaScript",
+    images: [
+      "./projects/IT-dep-1.png",
+      "./projects/IT-dep-2.png",
+    ],
+  },
+  {
+    name: "Valentine Interactive Website",
+    type: "Creative animated web gift",
+    tech: "HTML / CSS / JavaScript",
+    images: [
+      "./projects/valentine-opening.png",
+      "./projects/Valentine.png",
+    ],
+  },
+  {
+    name: "5th Anniversary Website",
+    type: "Personalized interactive gift",
+    tech: "HTML / CSS / JavaScript",
+    images: [
+      "./projects/annivesry.jpeg",
+    ],
+  },
+],
   experience: [
     { organization: "Madcodres Technologies", location: "Kinfra Kakanchery", role: "Flutter Mobile App Development Intern", period: "June 1 – July 1, 2026", detail: "Built an official Panchayat mobile app.", certificate: "Certificate available — file to be added" },
     { organization: "Corizo", location: "Remote", role: "Cybersecurity Intern", period: "August 2025 – October 2025", detail: "Cybersecurity fundamentals training.", certificate: "Certificate details to be added" },
