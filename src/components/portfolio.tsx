@@ -524,7 +524,23 @@ export function Portfolio() {
             <div className="col-span-12 md:col-span-9">
               <div className="grid gap-10 lg:grid-cols-2">
                 <div><h2 className="section-title">UI/UX & creative work.</h2><p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">{d.design.summary}</p><div className="mt-7 flex flex-wrap gap-2">{d.design.categories.map((item) => <span className="tag tag-outline" key={item}>{item}</span>)}</div><div className="mt-8 flex flex-wrap gap-4"><span className="inline-flex items-center gap-2 text-sm text-muted-foreground"><ExternalLink className="size-4 text-signal" /> Canva profile placeholder</span><a className="social-link" href={d.links.instagram} target="_blank" rel="noreferrer"><Instagram /> @canvaco_</a></div></div>
-                <AssetPlaceholder compact label="Selected creative work" />
+               <div className="grid grid-cols-2 gap-3">
+  {d.design.images.map((image, index) => (
+    <div
+      key={image}
+      className={`overflow-hidden border border-border bg-background ${
+        index === 0 ? "col-span-2" : ""
+      }`}
+    >
+      <img
+        src={image}
+        alt={`Creative design ${index + 1}`}
+        className="h-full w-full object-contain"
+        loading="lazy"
+      />
+    </div>
+  ))}
+</div>
               </div>
             </div>
           </div>
