@@ -448,7 +448,7 @@ export function Portfolio() {
       </div>
     )}
   </article>
-))})}
+))}
               </div>
             </div>
           </div>
