@@ -60,8 +60,8 @@ export const portfolioData = {
         "Roles: students, wardens, matron, mess secretary",
       ],
       images: [
-  "/projects/hostelHub.jpeg",
-  "/projects/hostel-dashboard.jpeg",
+  "./projects/hostelHub.jpeg",
+  "./projects/hostel-dashboard.jpeg",
 ],
     },
     {
@@ -81,9 +81,9 @@ export const portfolioData = {
         "Multi-tier admin roles",
       ],
       images: [
-  "/projects/gramika.jpeg",
-  "/projects/gramika-dash1.jpeg",
-  "/projects/gramika-dash2.jpeg",
+  "./projects/gramika.jpeg",
+  "./projects/gramika-dash1.jpeg",
+  "./projects/gramika-dash2.jpeg",
 ],
     },
     {
