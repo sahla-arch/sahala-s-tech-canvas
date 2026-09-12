@@ -143,12 +143,12 @@ export const portfolioData = {
   images: [
      "./designs/it-department-prototype.png",
      "./designs/it-dep-wireframe.png",
-    "./designs/wedding-invitation.png",
+    "./designs/wedng-invitiatn.png",
     "./designs/save-the-date.png",
-    "./designs/nikkah-nama.png",
-    "./designs/newspaper-printed.jpeg",
-    "./designs/nameslips-printed.jpeg",
-    "./designs/she-geci.png",
+    "./designs/Nikkah-Nama.png",
+    "./designs/newspaper.jpeg",
+    "./designs/Nameslips.jpeg",
+    "./designs/logo.png",
   ],
   
   },
