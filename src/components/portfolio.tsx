@@ -362,7 +362,17 @@ export function Portfolio() {
             <div className="mt-12 grid grid-cols-12 gap-x-6 gap-y-12">
               {d.featuredProjects.slice(0, 2).map((project, index) => (
                 <article className={index === 0 ? "col-span-12 lg:col-span-7" : "col-span-12 lg:col-span-5"} key={project.name}>
-                  <div className="project-media"><AssetPlaceholder label={`${project.name} screenshots`} /></div>
+                 <div className="project-media">
+  {project.images?.[0] ? (
+    <img
+      src={project.images[0]}
+      alt={`${project.name} screenshot`}
+      className="h-full w-full object-cover"
+    />
+  ) : (
+    <AssetPlaceholder label={`${project.name} screenshot`} />
+  )}
+</div>
                   <div className="mt-5 grid grid-cols-[minmax(0,1fr)_auto] items-start gap-4 border-t border-projects-rule pt-4">
                     <div className="min-w-0">
                       <h3 className="font-display text-3xl font-bold">{project.name}</h3>
