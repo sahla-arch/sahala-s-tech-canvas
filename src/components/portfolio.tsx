@@ -90,7 +90,7 @@ function ProjectDialog({ project, children }: { project: FeaturedProject; childr
         <img
           src={image}
           alt={`${project.name} screenshot ${index + 1}`}
-          className="h-auto w-full object-cover"
+         className="max-h-[520px] w-full object-contain"
         />
       </div>
     ))}
