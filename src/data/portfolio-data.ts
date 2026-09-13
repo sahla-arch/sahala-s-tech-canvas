@@ -11,7 +11,7 @@ export const portfolioData = {
     email: "sahlashana.it@gmail.com",
     phone: "9037687545",
     availability: "Open to technology opportunities",
-    profilePhoto: "/profile.jpeg",
+    profilePhoto: "./profile.jpeg",
   },
   links: {
     github: "https://github.com/sahla-arch",
@@ -19,7 +19,7 @@ export const portfolioData = {
     youtube: "https://www.youtube.com/@sahlashana44",
     instagram: "https://www.instagram.com/canvaco_",
     canva: "",
-    resume: "/resume.pdf",
+    resume: "./resume.pdf",
   },
   navigation: [
     ["Home", "home"], ["About", "about"], ["Focus", "focus"], ["Skills", "skills"],
@@ -126,7 +126,7 @@ export const portfolioData = {
 ],
   experience: [
     { organization: "Madcodres Technologies", location: "Kinfra Techpark Kakkancherry", role: "Flutter Mobile App Development Intern", period: "June 1 – July 1, 2026", detail: "Built an official Panchayat mobile app.", certificate: "View certificate",
-  certificateFile: "/certificates/madcodres-internship-certificate.pdf", },
+  certificateFile: "./certificates/madcodres-internship-certificate.pdf", },
     { organization: "Corizo", location: "Remote", role: "Cybersecurity Intern", period: "August 2025 – October 2025", detail: "Cybersecurity fundamentals training.",},
   ],
   education: [
