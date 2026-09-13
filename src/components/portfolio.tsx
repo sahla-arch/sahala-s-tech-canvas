@@ -524,7 +524,7 @@ export function Portfolio() {
     <FileText aria-hidden="true" className="size-4 text-signal" />
     {item.certificate}
   </p>
-
+)}
                   </article>
                 ))}
               </div>
