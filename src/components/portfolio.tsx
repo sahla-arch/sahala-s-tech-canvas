@@ -508,7 +508,7 @@ export function Portfolio() {
                 {d.experience.map((item) => (
                   <article className="grid gap-4 py-7 md:grid-cols-[1fr_2fr]" key={item.organization}>
                     <div><p className="font-mono text-[11px] uppercase text-signal">{item.period}</p><p className="mt-2 text-sm text-muted-foreground">{item.location}</p></div>
-                    <div><h3 className="font-display text-2xl font-semibold">{item.role}</h3><p className="mt-1 font-medium">{item.organization}</p><p className="mt-4 text-sm leading-6 text-muted-foreground">{item.detail}</p>{item.certificateFile ? (
+                    <div><h3 className="font-display text-2xl font-semibold">{item.role}</h3><p className="mt-1 font-medium">{item.organization}</p><p className="mt-4 text-sm leading-6 text-muted-foreground">{item.detail}</p>{"certificateFile" in item && item.certificateFile ? (
   <a
     href={item.certificateFile}
     target="_blank"
