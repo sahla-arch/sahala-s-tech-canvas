@@ -11,7 +11,7 @@ export const portfolioData = {
     email: "sahlashana.it@gmail.com",
     phone: "9037687545",
     availability: "Open to technology opportunities",
-    profilePhoto: "./profile.jpeg",
+    profilePhoto: "/profile.jpeg",
   },
   links: {
     github: "https://github.com/sahla-arch",
