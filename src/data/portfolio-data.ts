@@ -156,11 +156,11 @@ export const portfolioData = {
   certifications: [
     {
       name: "Flutter Mobile App Development Internship",
-      issuer: "Madcodres Technologies",
+      issuer: "Madcodres Technologies LLC",
       date: "July 2026",
       category: "Internship",
       status: "View certificate",
-    file: "./certificates/madcodres-internship-certificate.pdf",",
+    file: "./certificates/madcodres-internship-certificate.pdf",
     },
   ],
   volunteering: ["Alumni Connect Volunteer", "Oasis Social Service Volunteer", "Sterelerio Astronomy Club Volunteer"],
