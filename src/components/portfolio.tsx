@@ -519,12 +519,7 @@ export function Portfolio() {
     View certificate
     <ExternalLink aria-hidden="true" className="size-3" />
   </a>
-) : (
-  <p className="mt-4 inline-flex items-center gap-2 border border-dashed border-border px-3 py-2 font-mono text-[10px] uppercase text-muted-foreground">
-    <FileText aria-hidden="true" className="size-4 text-signal" />
-    {item.certificate}
-  </p>
-)}
+) : null}
                   </article>
                 ))}
               </div>
