@@ -212,7 +212,7 @@ function Header({ dark, toggleTheme, activeSection }: { dark: boolean; toggleThe
                   </SheetClose>
                 ))}
               </nav>
-              <ResumeDialog><Button className="mt-8 w-full rounded-none">Resume placeholder <ArrowDownToLine /></Button></ResumeDialog>
+              <ResumeDialog><Button className="mt-8 w-full rounded-none">Resume <ArrowDownToLine /></Button></ResumeDialog>
             </SheetContent>
           </Sheet>
         </div>
@@ -508,7 +508,7 @@ export function Portfolio() {
                 {d.experience.map((item) => (
                   <article className="grid gap-4 py-7 md:grid-cols-[1fr_2fr]" key={item.organization}>
                     <div><p className="font-mono text-[11px] uppercase text-signal">{item.period}</p><p className="mt-2 text-sm text-muted-foreground">{item.location}</p></div>
-                    <div><h3 className="font-display text-2xl font-semibold">{item.role}</h3><p className="mt-1 font-medium">{item.organization}</p><p className="mt-4 text-sm leading-6 text-muted-foreground">{item.detail}</p><p className="mt-4 inline-flex items-center gap-2 border border-dashed border-border px-3 py-2 font-mono text-[10px] uppercase text-muted-foreground"><Award className="size-4 text-signal" />{item.certificateFile ? (
+                    <div><h3 className="font-display text-2xl font-semibold">{item.role}</h3><p className="mt-1 font-medium">{item.organization}</p><p className="mt-4 text-sm leading-6 text-muted-foreground">{item.detail}</p>{item.certificateFile ? (
   <a
     href={item.certificateFile}
     target="_blank"
@@ -524,7 +524,7 @@ export function Portfolio() {
     <FileText aria-hidden="true" className="size-4 text-signal" />
     {item.certificate}
   </p>
-)}</div>
+
                   </article>
                 ))}
               </div>
@@ -621,12 +621,8 @@ export function Portfolio() {
     {cert.status}
   </p>
 )}
-                    </p>
                   </article>
                 ))}
-                <article className="flex min-h-48 items-center bg-background p-6 md:p-8">
-                  <p className="text-sm leading-6 text-muted-foreground">More certificates can be added here as they are earned — each card carries issuer, date, category and a preview placeholder.</p>
-                </article>
               </div>
             </div>
 
