@@ -603,8 +603,7 @@ export function Portfolio() {
                     </div>
                     <h3 className="mt-8 font-display text-2xl font-semibold">{cert.name}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{cert.issuer} · {cert.date}</p>
-                    <p className="mt-6 inline-flex items-center gap-2 border border-dashed border-border px-3 py-2 font-mono text-[10px] uppercase text-muted-foreground">
-                      <FileText aria-hidden="true" className="size-4 text-signal" />{cert.file ? (
+                   {cert.file ? (
   <a
     href={cert.file}
     target="_blank"
