@@ -125,8 +125,8 @@ export const portfolioData = {
   },
 ],
   experience: [
-    { organization: "Madcodres Technologies", location: "Kinfra Kakanchery", role: "Flutter Mobile App Development Intern", period: "June 1 – July 1, 2026", detail: "Built an official Panchayat mobile app.", certificate: "View certificate",
-  file: "/certificates/madcodres-internship-certificate.pdf", },
+    { organization: "Madcodres Technologies", location: "Kinfra Techpark Kakkancherry", role: "Flutter Mobile App Development Intern", period: "June 1 – July 1, 2026", detail: "Built an official Panchayat mobile app.", certificate: "View certificate",
+  certificateFile: "/certificates/madcodres-internship-certificate.pdf", },
     { organization: "Corizo", location: "Remote", role: "Cybersecurity Intern", period: "August 2025 – October 2025", detail: "Cybersecurity fundamentals training.",},
   ],
   education: [
