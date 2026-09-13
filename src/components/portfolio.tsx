@@ -132,16 +132,44 @@ function ResumeDialog({ children }: { children: React.ReactNode }) {
   return (
     <Dialog>
       <DialogTrigger asChild>{children}</DialogTrigger>
-      <DialogContent className="rounded-none border-border bg-background sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle className="font-display text-2xl">Resume coming soon</DialogTitle>
+
+      <DialogContent className="max-h-[90vh] max-w-5xl rounded-none border-border bg-background p-0">
+        <DialogHeader className="border-b border-border p-6 pr-12">
+          <DialogTitle className="font-display text-2xl">
+            Sahala Shana VK — Resume
+          </DialogTitle>
+
           <DialogDescription className="pt-2 leading-6">
-            The resume file has not been supplied yet. This button is ready to link to the final PDF when it is added.
+            View my latest resume or open the PDF in a new tab.
           </DialogDescription>
         </DialogHeader>
-        <div className="mt-2 border border-dashed border-border bg-muted/40 p-6 text-center">
-          <FileText aria-hidden="true" className="mx-auto size-7 text-signal" />
-          <p className="mt-3 font-mono text-xs uppercase text-muted-foreground">PDF placeholder</p>
+
+        <div className="h-[70vh]">
+          <iframe
+            src={d.links.resume}
+            title="Sahala Shana VK resume"
+            className="h-full w-full"
+          />
+        </div>
+
+        <div className="flex flex-wrap justify-end gap-3 border-t border-border p-4">
+          <Button asChild variant="outline" className="rounded-none">
+            <a
+              href={d.links.resume}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open PDF
+              <ExternalLink aria-hidden="true" className="ml-2 size-4" />
+            </a>
+          </Button>
+
+          <Button asChild className="rounded-none">
+            <a href={d.links.resume} download>
+              Download Resume
+              <FileText aria-hidden="true" className="ml-2 size-4" />
+            </a>
+          </Button>
         </div>
       </DialogContent>
     </Dialog>
@@ -480,7 +508,23 @@ export function Portfolio() {
                 {d.experience.map((item) => (
                   <article className="grid gap-4 py-7 md:grid-cols-[1fr_2fr]" key={item.organization}>
                     <div><p className="font-mono text-[11px] uppercase text-signal">{item.period}</p><p className="mt-2 text-sm text-muted-foreground">{item.location}</p></div>
-                    <div><h3 className="font-display text-2xl font-semibold">{item.role}</h3><p className="mt-1 font-medium">{item.organization}</p><p className="mt-4 text-sm leading-6 text-muted-foreground">{item.detail}</p><p className="mt-4 inline-flex items-center gap-2 border border-dashed border-border px-3 py-2 font-mono text-[10px] uppercase text-muted-foreground"><Award className="size-4 text-signal" />{item.certificate}</p></div>
+                    <div><h3 className="font-display text-2xl font-semibold">{item.role}</h3><p className="mt-1 font-medium">{item.organization}</p><p className="mt-4 text-sm leading-6 text-muted-foreground">{item.detail}</p><p className="mt-4 inline-flex items-center gap-2 border border-dashed border-border px-3 py-2 font-mono text-[10px] uppercase text-muted-foreground"><Award className="size-4 text-signal" />{item.certificateFile ? (
+  <a
+    href={item.certificateFile}
+    target="_blank"
+    rel="noreferrer"
+    className="mt-4 inline-flex items-center gap-2 border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] transition-colors hover:bg-muted"
+  >
+    <FileText aria-hidden="true" className="size-4 text-signal" />
+    View certificate
+    <ExternalLink aria-hidden="true" className="size-3" />
+  </a>
+) : (
+  <p className="mt-4 inline-flex items-center gap-2 border border-dashed border-border px-3 py-2 font-mono text-[10px] uppercase text-muted-foreground">
+    <FileText aria-hidden="true" className="size-4 text-signal" />
+    {item.certificate}
+  </p>
+)}</div>
                   </article>
                 ))}
               </div>
@@ -560,7 +604,23 @@ export function Portfolio() {
                     <h3 className="mt-8 font-display text-2xl font-semibold">{cert.name}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{cert.issuer} · {cert.date}</p>
                     <p className="mt-6 inline-flex items-center gap-2 border border-dashed border-border px-3 py-2 font-mono text-[10px] uppercase text-muted-foreground">
-                      <FileText aria-hidden="true" className="size-4 text-signal" />{cert.status}
+                      <FileText aria-hidden="true" className="size-4 text-signal" />{cert.file ? (
+  <a
+    href={cert.file}
+    target="_blank"
+    rel="noreferrer"
+    className="mt-6 inline-flex items-center gap-2 border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] transition-colors hover:bg-muted"
+  >
+    <FileText aria-hidden="true" className="size-4 text-signal" />
+    View certificate
+    <ExternalLink aria-hidden="true" className="size-3" />
+  </a>
+) : (
+  <p className="mt-6 inline-flex items-center gap-2 border border-dashed border-border px-3 py-2 font-mono text-[10px] uppercase text-muted-foreground">
+    <FileText aria-hidden="true" className="size-4 text-signal" />
+    {cert.status}
+  </p>
+)}
                     </p>
                   </article>
                 ))}
@@ -585,7 +645,7 @@ export function Portfolio() {
 
         <section className="section-shell border-b border-border py-16 lg:py-20">
           <div className="grid grid-cols-12 items-center gap-8 bg-foreground p-7 text-background md:p-10">
-            <div className="col-span-12 md:col-span-8"><p className="font-mono text-[10px] uppercase text-signal">Resume</p><h2 className="mt-4 font-display text-3xl font-bold md:text-5xl">A concise record, ready when the PDF is.</h2><p className="mt-4 max-w-2xl text-sm leading-6 text-background/70">The final resume has not been uploaded. View and download actions are prepared as placeholders for the supplied document.</p></div>
+            <div className="col-span-12 md:col-span-8"><p className="font-mono text-[10px] uppercase text-signal">Resume</p><h2 className="mt-4 font-display text-3xl font-bold md:text-5xl">A concise overview of my education, technical skills, projects and experience.</h2><p className="mt-4 max-w-2xl text-sm leading-6 text-background/70"></p></div>
             <div className="col-span-12 flex flex-wrap gap-3 md:col-span-4 md:justify-end"><ResumeDialog><Button className="rounded-none bg-background text-foreground hover:bg-signal hover:text-signal-foreground">View resume <FileText /></Button></ResumeDialog><ResumeDialog><Button variant="outline" className="rounded-none border-background/30 bg-transparent text-background hover:bg-background hover:text-foreground">Download <ArrowDownToLine /></Button></ResumeDialog></div>
           </div>
         </section>
