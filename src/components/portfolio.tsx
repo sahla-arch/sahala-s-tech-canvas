@@ -506,22 +506,45 @@ export function Portfolio() {
               <h2 className="section-title">Internships & applied learning.</h2>
               <div className="mt-10 divide-y divide-border border-y border-border">
                 {d.experience.map((item) => (
-                  <article className="grid gap-4 py-7 md:grid-cols-[1fr_2fr]" key={item.organization}>
-                    <div><p className="font-mono text-[11px] uppercase text-signal">{item.period}</p><p className="mt-2 text-sm text-muted-foreground">{item.location}</p></div>
-                    <div><h3 className="font-display text-2xl font-semibold">{item.role}</h3><p className="mt-1 font-medium">{item.organization}</p><p className="mt-4 text-sm leading-6 text-muted-foreground">{item.detail}</p>{"certificateFile" in item && item.certificateFile ? (
-  <a
-    href={item.certificateFile}
-    target="_blank"
-    rel="noreferrer"
-    className="mt-4 inline-flex items-center gap-2 border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] transition-colors hover:bg-muted"
+  <article
+    className="grid gap-4 py-7 md:grid-cols-[1fr_2fr]"
+    key={item.organization}
   >
-    <FileText aria-hidden="true" className="size-4 text-signal" />
-    View certificate
-    <ExternalLink aria-hidden="true" className="size-3" />
-  </a>
-) : null}
-                  </article>
-                ))}
+    <div>
+      <p className="font-mono text-[11px] uppercase text-signal">
+        {item.period}
+      </p>
+      <p className="mt-2 text-sm text-muted-foreground">
+        {item.location}
+      </p>
+    </div>
+
+    <div>
+      <h3 className="font-display text-2xl font-semibold">
+        {item.role}
+      </h3>
+
+      <p className="mt-1 font-medium">{item.organization}</p>
+
+      <p className="mt-4 text-sm leading-6 text-muted-foreground">
+        {item.detail}
+      </p>
+
+      {"certificateFile" in item && (
+        <a
+          href={item.certificateFile}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-4 inline-flex items-center gap-2 border border-border px-3 py-2 font-mono text-[10px] uppercase tracking-[0.12em] transition-colors hover:bg-muted"
+        >
+          <FileText aria-hidden="true" className="size-4 text-signal" />
+          View certificate
+          <ExternalLink aria-hidden="true" className="size-3" />
+        </a>
+      )}
+    </div>
+  </article>
+))}
               </div>
             </div>
           </div>
